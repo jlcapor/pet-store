@@ -1,0 +1,1 @@
+ALTER TABLE "pet-store_user" ADD COLUMN "password" varchar(255);
