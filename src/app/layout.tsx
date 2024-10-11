@@ -8,10 +8,9 @@ import { TRPCReactProvider } from '@/trpc/react';
 import { env } from '@/env';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import Navbar from '@/components/layouts/navbar';
-import Footer from '@/components/layouts/footer';
-import { Cart } from '@/components/cart/cart';
 import SessionWrapper from '@/components/session-wrapper';
+import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
 	metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -44,16 +43,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 				suppressHydrationWarning
 			>
 				<SessionWrapper>
-					<TRPCReactProvider>
-						<div className="relative flex min-h-screen flex-col bg-background">
-							<Navbar />
-							<div className="flex-1">
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+						<TRPCReactProvider>
+							<div className="relative flex min-h-screen flex-col bg-background">
 								{children}
 							</div>
-							<Cart />
-							<Footer />
-						</div>
-					</TRPCReactProvider>
+						</TRPCReactProvider>
+						<Toaster />
+					</ThemeProvider>
 				</SessionWrapper>
 			</body>
 		</html>

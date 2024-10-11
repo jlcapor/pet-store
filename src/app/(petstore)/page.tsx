@@ -1,4 +1,5 @@
 import HeroSection from '@/components/home-page/hero-section';
+import { Badge } from '@/components/ui/badge';
 
 export default async function Home() {
 	return (
@@ -8,9 +9,13 @@ export default async function Home() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
-							<div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">
+							<Badge
+								aria-hidden="true"
+								variant="outline"
+								className="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+							>
 								Comprar por mascota
-							</div>
+							</Badge>
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 								Encuentra lo mejor para tu mascota
 							</h2>
@@ -26,7 +31,13 @@ export default async function Home() {
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center justify-center space-y-4 text-center">
 						<div className="space-y-2">
-							<div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Servicios</div>
+							<Badge
+								aria-hidden="true"
+								variant="outline"
+								className="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+							>
+								Servicios
+							</Badge>
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
 								Cuidamos de tus mascotas
 							</h2>

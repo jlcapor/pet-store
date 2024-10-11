@@ -1,13 +1,18 @@
 import Link from 'next/link';
 import { Icons } from '../icons';
 import { siteConfig } from '@/config/site';
-import ProfileMenu from '../profile-menu/profile-menu';
 import { OpenCartButton } from '../cart/open-cart-button';
 import MainNav from './main-nav';
 import ProductSearch from '../product-search';
 import MobileNav from './mobile-nav';
+import AuthDropdown from '../profile-menu/auth-dropdown';
+import { Session } from 'next-auth';
 
-export default function Navbar() {
+interface NavbarProps {
+	session: Session | null,
+}
+export default function Navbar({ session }: NavbarProps) {
+	
 	return (
 		<nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="mx-auto flex max-w-screen-2xl h-16 items-center justify-between gap-1 px-4 py-1.5 sm:w-[95vw] md:flex-row md:gap-5">
@@ -19,14 +24,14 @@ export default function Navbar() {
 								<Logo />
 							</div>
 							<div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
-								<MainNav />
+								<MainNav items={siteConfig.mainNav} />
 							</div>
 						</div>
 					</div>
 					<div className="flex items-center space-x-3">
 						<ProductSearch />
 						<OpenCartButton />
-						<ProfileMenu />
+						<AuthDropdown session={session}/>
 					</div>
 				</div>
 			</div>

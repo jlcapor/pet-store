@@ -13,8 +13,13 @@ export const siteConfig = {
 	mainNav: [
 		
 		{
-			title: 'Mascotas',
-			href: '/pets',
+			title: 'Inicio',
+			href: '/',
+			items: [],
+		},
+		{
+			title: 'Productos',
+			href: '/products',
 			items: [],
 		},
 		{
@@ -25,6 +30,11 @@ export const siteConfig = {
 		{
 			title: 'Blog',
 			href: '/blog',
+			items: [],
+		},
+		{
+			title: 'Acerca de',
+			href: '/about',
 			items: [],
 		},
 		
