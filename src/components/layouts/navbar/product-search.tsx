@@ -1,15 +1,15 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
+import * as React from 'react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../../ui/dialog';
+import { Input } from '../../ui/input';
+import { Button } from '../../ui/button';
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 
 export default function ProductSearch() {
 	// const [ searchedInput, setSearchedInput ] = useState('');
-	const [ isOpen, setIsOpen ] = useState(false);
-	useEffect(() => {
+	const [ isOpen, setIsOpen ] = React.useState(false);
+	React.useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.ctrlKey && event.key === 'k') {
 				event.preventDefault();

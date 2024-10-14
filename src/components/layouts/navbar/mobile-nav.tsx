@@ -1,10 +1,10 @@
 'use client';
 import * as React from 'react';
 import { useMediaQuery } from '@/hooks/use-media-query';
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '../ui/sheet';
-import { Button } from '../ui/button';
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from '../../ui/sheet';
+import { Button } from '../../ui/button';
 import { AlignLeftIcon } from 'lucide-react';
-import { DialogTitle } from '../ui/dialog';
+import { DialogTitle } from '../../ui/dialog';
 import MobileAuthLinks from './mobile-auth-links';
 import { Logo } from './navbar';
 import Link from 'next/link';
@@ -32,9 +32,6 @@ export default function MobileNav() {
 					</div>
 				</SheetHeader>
 				<div className="flex flex-col gap-4 overflow-y-auto">
-					<div className="p-6 pb-4 flex gap-2.5">
-						<MobileAuthLinks onClose={() => setOpen(false)} />
-					</div>
 					<div className="flex flex-col gap-2.5 mt-3 mx-2 px-5">
 						yutyuty
 						
@@ -42,6 +39,10 @@ export default function MobileNav() {
 					<div className="mx-2 px-5">
 						
 						fdfgdf
+					</div>
+
+					<div className="p-6 pb-4 flex gap-2.5">
+						<MobileAuthLinks onClose={() => setOpen(false)} />
 					</div>
 				</div>
 			</SheetContent>

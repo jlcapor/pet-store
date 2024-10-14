@@ -1,5 +1,5 @@
 import { getCurrentUser } from '@/lib/session';
-import Login from './login';
+import LoginForm  from './_components/login-form';
 import { redirect } from 'next/navigation';
 
 export const metadata = {
@@ -14,5 +14,5 @@ export default async function LoginPage() {
 		if (user.role === 'ADMIN') redirect('/');
 		redirect('/profile');
 	}
-	return <Login />;
+	return <LoginForm  />;
 }

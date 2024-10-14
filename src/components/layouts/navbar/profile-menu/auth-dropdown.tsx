@@ -1,7 +1,7 @@
 'use client';
-import React from 'react';
+import * as React from "react"
 import Link from 'next/link';
-import { Button, ButtonProps } from '../ui/button';
+import { Button, ButtonProps } from '@/components/ui/button';
 import { 
 	DropdownMenu, 
 	DropdownMenuContent, 
@@ -10,14 +10,14 @@ import {
 	DropdownMenuLabel, 
 	DropdownMenuSeparator, 
 	DropdownMenuTrigger 
-} from '../ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 import { LogIn } from 'lucide-react';
 import { type Session } from 'next-auth';
 import { cn } from '@/lib/utils';
-import { Avatar } from '@radix-ui/react-avatar';
-import { AvatarFallback, AvatarImage } from '../ui/avatar';
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DashboardIcon, ExitIcon } from '@radix-ui/react-icons';
-import { Icons } from '../icons';
+import { Icons } from '@/components/icons';
 interface AuthDropdownProps extends React.ComponentPropsWithRef<typeof DropdownMenuTrigger>, ButtonProps {
 	session: Session | null,
 }
@@ -42,10 +42,7 @@ export default function AuthDropdown({ session, className, ...props }: AuthDropd
 	
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger  
-				className={className}
-				asChild
-			>
+			<DropdownMenuTrigger asChild>
 				<Button 
 					variant="secondary" 
 					className={cn('size-8 rounded-full', className)} {...props}
@@ -56,9 +53,9 @@ export default function AuthDropdown({ session, className, ...props }: AuthDropd
 					</Avatar>
 				</Button>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent align="end" forceMount>
+			<DropdownMenuContent className="w-56" align="end" forceMount>
 				<DropdownMenuLabel className="font-normal">
-					<div className="flex items-center justify-start gap-2 p-2">
+					<div className="flex flex-col space-y-1">
 						<div className="flex flex-col space-y-1 leading-none">
 							{user.name && <p className="font-medium">{user.name}</p>}
 							{user.email && (

@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import React from 'react';
-import { buttonVariants } from '../ui/button';
-import { Shell } from '../Shell';
-import { Logo } from './navbar';
+import { buttonVariants } from '../../ui/button';
+import { Shell } from '../../Shell';
+import { Logo } from '../navbar/navbar';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
-import { Icons } from '../icons';
+import { Icons } from '../../icons';
 import { ModeToggle } from './mode-toggle';
 
-export default function Footer() {
+const Footer = () => {
 	return (
 		<footer className="w-full border-t bg-background">
 			<Shell>
@@ -45,3 +44,6 @@ export default function Footer() {
 		</footer>
 	);
 }
+
+export default Footer
+

@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1728272556920,
-      "tag": "0000_orange_brood",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1728273896275,
-      "tag": "0001_tiresome_paladin",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1728345323575,
-      "tag": "0002_safe_scorpion",
+      "when": 1728880133325,
+      "tag": "0000_acoustic_zodiak",
       "breakpoints": true
     }
   ]

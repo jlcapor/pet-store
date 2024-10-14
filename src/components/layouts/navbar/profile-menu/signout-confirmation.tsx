@@ -1,6 +1,6 @@
+import * as React from 'react';
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons';
 import { signOut } from 'next-auth/react';
-import React from 'react';
 import { toast } from 'sonner';
 import {
 	AlertDialog,
@@ -9,9 +9,9 @@ import {
 	AlertDialogHeader,
 	AlertDialogTitle,
 	AlertDialogTrigger,
-} from '../ui/alert-dialog';
-import { Button } from '../ui/button';
-import { LoadingButton } from '../loading-button';
+} from '@/components/ui/alert-dialog';
+import { Button } from '@/components/ui/button';
+import { LoadingButton } from '@/components/loading-button';
 
 const SignoutConfirmation = () => {
 	const [ open, setOpen ] = React.useState(false);

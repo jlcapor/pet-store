@@ -1,8 +1,7 @@
 'use client';
-
+import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { PasswordInput } from '@/components/password-input';
-import { SubmitButton } from '@/components/submit-button';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -10,19 +9,18 @@ import { Label } from '@/components/ui/label';
 import { type LoginInput } from '@/lib/validations/auth';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { Icons } from '@/components/icons';
 import { signIn } from 'next-auth/react';
 
-export default function Login() {
+export default function LoginForm() {
 	const initialValues: LoginInput = {
 		email: '',
 		password: '',
 	};
 
 	const router = useRouter();
-	const [isLoading, setIsLoading] = useState(false);
-	const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
+	const [isLoading, setIsLoading] = React.useState(false);
+	const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
 	const { register, handleSubmit, formState: { errors }, setError } = useForm({ defaultValues: initialValues });
 	
 	const handleLogin = async (formData: LoginInput) => {
